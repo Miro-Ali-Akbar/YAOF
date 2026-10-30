@@ -1,0 +1,2 @@
+Vendored from https://github.com/i12bp8/TagTinker at a906ed32ce025d9b350ec6e7f533d093be9be2b1 (2026-09-17).
+Only the Flipper app sources and esp32-wifi-fw/shared are copied; the rest of esp32-wifi-fw, web-image-prep, cloud-plugins and images are left out.

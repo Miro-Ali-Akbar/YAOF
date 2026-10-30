@@ -57,6 +57,7 @@ EXTRA_EXT_APPS = [
     "ami_tool",
     "weebo",
     "nfc_magic",
+    "nfc_maker",
     "ulc_brute",
     # Infrared
     "ir_remote",
