@@ -37,11 +37,11 @@ class GitVersion:
         branch = (
             os.environ.get("WORKFLOW_BRANCH_OR_TAG", None)
             or tag
-            or self._exec_git("rev-parse --abbrev-ref HEAD").removeprefix("mntm-")
+            or self._exec_git("rev-parse --abbrev-ref HEAD").removeprefix("yaof-")
             or "unknown"
         )
 
-        version = tag or "mntm-dev"
+        version = tag or "yaof-dev"
 
         if "SOURCE_DATE_EPOCH" in os.environ:
             commit_date = datetime.utcfromtimestamp(

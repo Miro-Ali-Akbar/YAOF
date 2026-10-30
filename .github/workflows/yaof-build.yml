@@ -1,0 +1,51 @@
+name: "YAOF Build"
+
+on:
+  push:
+    branches:
+      - dev
+    tags:
+      - "yaof-*"
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+env:
+  FBT_GIT_SUBMODULE_SHALLOW: 1
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: "Checkout code"
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: "Cache toolchain"
+        uses: actions/cache@v4
+        with:
+          path: toolchain
+          key: toolchain-${{ runner.os }}-${{ hashFiles('scripts/toolchain/fbtenv.sh') }}
+
+      - name: "Build the firmware update package"
+        run: ./fbt TARGET_HW=7 DEBUG=0 COMPACT=1 updater_package
+
+      - name: "Upload update package"
+        uses: actions/upload-artifact@v4
+        with:
+          name: yaof-update
+          path: dist/f7-*/flipper-z-f7-update-*.tgz
+
+      - name: "Publish release"
+        if: startsWith(github.ref, 'refs/tags/yaof-')
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" dist/f7-*/flipper-z-f7-update-*.tgz \
+            --title "$GITHUB_REF_NAME" --generate-notes
