@@ -43,10 +43,45 @@ if not os.environ.get("DIST_SUFFIX"):
     # You can get commit and branch info in firmware with appropriate version_get_*() calls
 
 # Skip external apps by default
-SKIP_EXTERNAL = False
+# YAOF: only the external apps listed in EXTRA_EXT_APPS are built
+SKIP_EXTERNAL = True
 
 # Appid's to include even when skipping externals
-EXTRA_EXT_APPS = []
+EXTRA_EXT_APPS = [
+    # Bluetooth
+    "ble_spam",
+    # iButton / RFID / NFC
+    "fuzzer_ibtn",
+    "fuzzer_rfid",
+    "mifare_fuzzer",
+    "ami_tool",
+    "weebo",
+    "nfc_magic",
+    "ulc_brute",
+    # Infrared
+    "ir_remote",
+    "ir_scope",
+    "tagtinker",
+    # Sub-GHz
+    "subghz_bruteforcer",
+    "esubghz_chat",
+    "flipper_share",
+    "proto_pirate",
+    "protoview",
+    "meal_pager",
+    "rolling_flaws",
+    "spectrum_analyzer",
+    "sub_analyzer",
+    # Media
+    "image_viewer",
+    # Tools
+    "nfc_rfid_detector",
+    "quac",
+    "upython",
+    # USB
+    "usb_ccb",
+    "xinput_controller",
+]
 
 # Coprocessor firmware
 COPRO_OB_DATA = "scripts/ob.data"
