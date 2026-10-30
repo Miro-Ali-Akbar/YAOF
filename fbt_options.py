@@ -77,6 +77,7 @@ EXTRA_EXT_APPS = [
     "image_viewer",
     # Tools
     "nfc_rfid_detector",
+    "nightstand",
     "quac",
     "upython",
     # USB
