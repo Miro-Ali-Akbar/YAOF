@@ -59,6 +59,9 @@ EXTRA_EXT_APPS = [
     "nfc_magic",
     "nfc_maker",
     "ulc_brute",
+    # Controller / HID remote (USB + Bluetooth): keynote, keyboard, mouse, jiggler
+    "hid_usb",
+    "hid_ble",
     # YAOF custom
     "yaof_nightstand",
     # Infrared
