@@ -59,6 +59,8 @@ EXTRA_EXT_APPS = [
     "nfc_magic",
     "nfc_maker",
     "ulc_brute",
+    # YAOF custom
+    "yaof_nightstand",
     # Infrared
     "ir_remote",
     "ir_scope",

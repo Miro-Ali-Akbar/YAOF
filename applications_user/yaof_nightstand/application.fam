@@ -1,0 +1,11 @@
+App(
+    appid="yaof_nightstand",
+    name="Nightstand",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="yaof_nightstand_app",
+    requires=["gui"],
+    stack_size=4 * 1024,
+    fap_category="Tools",
+    fap_author="YAOF",
+    fap_description="Nightstand clock that emulates the home NFC tag while open.",
+)
