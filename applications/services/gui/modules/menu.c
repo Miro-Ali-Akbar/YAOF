@@ -236,8 +236,8 @@ static void menu_draw_callback(Canvas* canvas, void* _model) {
             furi_record_close(RECORD_DOLPHIN);
             canvas_draw_str_aligned(canvas, 127, 1, AlignRight, AlignTop, str);
             for(int8_t i = -1; i <= 4; i++) {
-                shift_position = position + i;
-                if(shift_position >= items_count) continue;
+                // YAOF: wrap around so neighbours past the edges stay visible
+                shift_position = (position + items_count + i) % items_count;
                 item = MenuItemArray_get(model->items, shift_position);
                 size_t width = 20;
                 size_t height = 20;
