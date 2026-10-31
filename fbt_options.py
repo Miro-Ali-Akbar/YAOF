@@ -86,6 +86,7 @@ EXTRA_EXT_APPS = [
     "quac",
     "upython",
     # USB
+    "mass_storage",
     "usb_ccb",
     "xinput_controller",
 ]
