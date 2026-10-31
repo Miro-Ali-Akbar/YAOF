@@ -6,7 +6,7 @@
 #include <storage/storage.h>
 #include <lib/subghz/types.h>
 
-#define SUBGHZ_LAST_SETTING_FREQUENCY_ANALYZER_TRIGGER        (-93.0f)
+#define SUBGHZ_LAST_SETTING_FREQUENCY_ANALYZER_TRIGGER        (-96.0f) // YAOF
 // 1 = "AM650"
 // "AM270", "AM650", "FM238", "FM12K", "FM476",
 #define SUBGHZ_LAST_SETTING_DEFAULT_PRESET                    1

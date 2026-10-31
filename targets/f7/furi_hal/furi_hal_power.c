@@ -51,6 +51,10 @@ static volatile FuriHalPower furi_hal_power = {
 
 extern const BQ27220DMData furi_hal_power_gauge_data_memory[];
 
+// YAOF: default charge-voltage cap (~80% for battery longevity). 4.016 V is a
+// valid BQ25896 VREG step; full charge is 4.208 V. No UI; change this to adjust.
+#define YAOF_CHARGE_VOLTAGE_LIMIT 4.016f
+
 void furi_hal_power_init(void) {
 #ifdef FURI_HAL_POWER_DEBUG
     furi_hal_gpio_init_simple(FURI_HAL_POWER_DEBUG_WFI_GPIO, GpioModeOutputPushPull);
@@ -99,6 +103,11 @@ void furi_hal_power_init(void) {
         retry--;
     }
     furi_hal_i2c_release(&furi_hal_i2c_handle_power);
+
+    // YAOF: cap charge voltage for battery longevity (i2c released; setter re-acquires)
+    if(furi_hal_power.charger_ok) {
+        furi_hal_power_set_battery_charge_voltage_limit(YAOF_CHARGE_VOLTAGE_LIMIT);
+    }
 
     FURI_LOG_I(TAG, "Init OK");
 }

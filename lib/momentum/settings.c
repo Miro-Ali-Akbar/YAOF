@@ -7,11 +7,11 @@
 #define TAG "MomentumSettings"
 
 MomentumSettings momentum_settings = {
-    .asset_pack = "", // Default
+    .asset_pack = "Pwnagotchi", // YAOF default
     .anim_speed = 100, // 100%
     .cycle_anims = 0, // Meta.txt
     .unlock_anims = false, // OFF
-    .menu_style = MenuStyleDsi, // DSi
+    .menu_style = MenuStylePs4, // PS4 (YAOF)
     .lock_on_boot = true, // ON
     .bad_pins_format = false, // OFF
     .allow_locked_rpc_usb = false, // OFF
@@ -22,14 +22,14 @@ MomentumSettings momentum_settings = {
     .lockscreen_date = true, // ON
     .lockscreen_statusbar = true, // ON
     .lockscreen_prompt = true, // ON
-    .lockscreen_transparent = false, // OFF
+    .lockscreen_transparent = true, // ON (YAOF: show asset pack anim under lock screen)
     .lockscreen_skip_animation = false, // OFF
     .battery_icon = BatteryIconBarPercent, // Bar %
     .status_icons = true, // ON
     .bar_borders = true, // ON
     .bar_background = false, // OFF
     .sort_dirs_first = true, // ON
-    .show_hidden_files = false, // OFF
+    .show_hidden_files = true, // ON (YAOF)
     .show_internal_tab = false, // OFF
     .browser_path_mode = BrowserPathOff, // OFF
     .favorite_timeout = 0, // OFF
@@ -44,9 +44,9 @@ MomentumSettings momentum_settings = {
     .uart_esp_channel = FuriHalSerialIdUsart, // pin 13,14
     .uart_nmea_channel = FuriHalSerialIdUsart, // pin 13,14
     .file_naming_prefix_after = false, // Before
-    .spoof_color = FuriHalVersionColorUnknown, // Real
-    .rpc_color_fg = {{ScreenColorModeDefault, {.value = 0x000000}}}, // Default Black
-    .rpc_color_bg = {{ScreenColorModeDefault, {.value = 0xFF8200}}}, // Default Orange
+    .spoof_color = FuriHalVersionColorBlack, // Black (YAOF)
+    .rpc_color_fg = {{ScreenColorModeRainbow, {.value = 0x000000}}}, // Rainbow (YAOF)
+    .rpc_color_bg = {{ScreenColorModeRainbow, {.value = 0xFF8200}}}, // Rainbow (YAOF)
 };
 
 typedef enum {

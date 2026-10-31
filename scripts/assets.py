@@ -173,7 +173,7 @@ class Main(App):
         icons = []
         paths = []
         symbols = pathlib.Path(__file__).parent.parent
-        if "UFBT_HOME" in os.environ:
+        if "UFBT_HOME" in os.environ and (symbols / "sdk_headers/f7_sdk").is_dir():
             symbols /= "sdk_headers/f7_sdk"
         symbols = (symbols / "targets/f7/api_symbols.csv").read_text()
         api_has_icon = lambda name: f"Variable,+,{name},const Icon," in symbols

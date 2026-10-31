@@ -13,3 +13,6 @@
   - [Gissio](https://github.com/Gissio) for the [secondary font (tiny5)](https://github.com/Gissio/font_tiny5)
   - Ife Mena for the [keyboard font (3x5im)](https://www.pentacom.jp/pentacom/bitfontmaker2/gallery/?id=7785)
   - [WillyJL](https://github.com/Willy-JL) for other assets, icons and animations (mostly converted from game assets)
+
+- **`Pwnagotchi`** (YAOF default) - Credits:
+  - [pr3](https://github.com/the1anonlypr3) for the [refurbished pwnagotchi animations](https://github.com/the1anonlypr3/pr3s_anim_haven/tree/main/Animations%20%3D3/refurbished%20gotchi%20anims), via [Next-Flip/Asset-Packs](https://github.com/Next-Flip/Asset-Packs/tree/main/pwnagotchi)
